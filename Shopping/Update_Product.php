@@ -157,7 +157,11 @@
 						        $sqlstring="UPDATE product set product_name='$proname', price='$price', store='$store', smalldesc='$short',
 						        detaildesc='$detail', pro_qty='$qty',
 						        pro_image='$filePic',cat_id='$category',
+<<<<<<< HEAD
 						        prodate='.date('Y-m-d H:i:s').' WHERE product_id='$id'";
+=======
+						        prodate='".date('Y-m-d H:i:s')."' WHERE product_id='$id'";
+>>>>>>> e0ab751d4ec4eaae846db0b4c714c8776c574fc7
 						        pg_query($conn,$sqlstring);
 						        echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
 					        }
