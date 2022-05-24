@@ -154,10 +154,10 @@
 					    if(pg_num_rows($result)==0){
 						        copy($pic['tmp_name'], "img/".$pic['name']);
 						        $filePic = $pic['name'];
-						        $sqlstring="UPDATE product set product_name='$proname', price=$price, store=$store, smalldesc='$short',
-						        detaildesc='$detail', pro_qty=$qty,
+						        $sqlstring="UPDATE product set product_name='$proname', price='$price', store='$store', smalldesc='$short',
+						        detaildesc='$detail', pro_qty='$qty',
 						        pro_image='$filePic',cat_id='$category',
-						        prodate='".date('Y-m-d H:i:s')."' WHERE product_Iid='$id'";
+						        prodate='.date('Y-m-d H:i:s').' WHERE product_id='$id'";
 						        pg_query($conn,$sqlstring);
 						        echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
 					        }
@@ -178,8 +178,8 @@
 				$result=pg_query($conn,$sq);
 				if(pg_num_rows($result)==0){
 					$sqlstring="UPDATE product set product_name='$proname',
-					price=$price,store=$store, smalldesc='$short', detaildesc='$detail',
-					pro_qty=$qty, cat_id='$category',
+					price='$price',store='$store', smalldesc='$short', detaildesc='$detail',
+					pro_qty='$qty', cat_id='$category',
 					prodate='".date('Y-m-d H:i:s')."' WHERE product_id='$id'";
 					pg_query($conn,$sqlstring);
 					echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
